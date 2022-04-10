@@ -4,5 +4,5 @@ abstract class Config {
 }
 
 class _Config {
-  String get baseUrl => 'https://akasha-api.herokuapp.com/';
+  String get baseUrl => 'https://shankaradev-api.codewalnut.com';
 }

@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 
 class LoginAPI extends NetworkService {
   static const String postsEndpoint = '/posts';
-  static const String emailLoginEndpoint = '/api/app_login';
+  static const String emailLoginEndpoint = '/verifyOTP';
 
   LoginAPI({required Dio dio}) : super(dio: dio);
 
@@ -29,11 +29,11 @@ class LoginAPI extends NetworkService {
     return NetworkResult.success(response);
   }
 
-  Future<NetworkResult> emailLogin(
-      {required String email, required String password}) async {
+  Future<NetworkResult> verifyOTP(
+      {required String mobile, required String otp}) async {
     return post<NetworkResult, dynamic>(
       emailLoginEndpoint,
-      body: {'email': email, 'password': password},
+      body: {'mobile': mobile, 'otp': otp},
       decoder: (data) => data,
       onSuccess: _onSuccessLogin,
       onError: (response) => NetworkResult.error(response?.message),

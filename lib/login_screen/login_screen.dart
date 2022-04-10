@@ -11,6 +11,17 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final mobileController = TextEditingController();
+  final otpController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    mobileController.dispose();
+    otpController.dispose();
+    super.dispose();
+  }
+
   @override
   final LoginRepository userTripRepo =
       LoginRepository(homeNetworkService: Modular.get<LoginAPI>());
@@ -33,6 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   }
                   return null;
                 },
+                controller: mobileController,
               ),
             ),
             Container(
@@ -46,6 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   }
                   return null;
                 },
+                controller: otpController,
               ),
             ),
             Padding(
@@ -56,7 +69,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       MaterialStateProperty.all<Color>(Colors.blue),
                 ),
                 onPressed: () {
-                  userTripRepo.getExamplecall();
+                  userTripRepo.verifyOTP(
+                      mobile: mobileController.text, otp: otpController.text);
                 },
                 child: Text('Login'),
               ),

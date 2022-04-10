@@ -9,13 +9,15 @@ class LoginRepository {
 
   int get totalData => _totalData;
 
-  Future emailLogin({required String email, required String password}) async {
+  Future verifyOTP({required String mobile, required String otp}) async {
     final result =
-        await _homeNetworkService.emailLogin(email: email, password: password);
+        await _homeNetworkService.verifyOTP(mobile: mobile, otp: otp);
     result.when(success: (payload) {
       //Do anything with response
+      print(payload);
     }, error: (message) {
       //Do anything with error
+      print(message);
     });
   }
 
