@@ -21,6 +21,7 @@ class LoginRepository {
 
   Future getExamplecall() async {
     final result = await _homeNetworkService.loginAPICall();
+    print(result);
     result.when(
       success: (payload) {
         _totalData = payload.length;
