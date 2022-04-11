@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './login_screen/login_screen.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import './app_modular.dart';
 

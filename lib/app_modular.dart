@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import './core/config.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import './login_screen/login_screen.dart';
-import './login_screen/login_api.dart';
+import './features/login_screen/login_screen.dart';
+import './features/login_screen/login_api.dart';
 
 class AppModule extends Module {
   @override

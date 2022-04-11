@@ -1,6 +1,6 @@
 import 'login_modal.dart';
-import '../core/network/network_result.dart';
-import '../core/network//network_service.dart';
+import '../../core/network/network_result.dart';
+import '../../core/network//network_service.dart';
 import 'package:dio/src/dio.dart';
 import 'package:flutter/foundation.dart';
 
